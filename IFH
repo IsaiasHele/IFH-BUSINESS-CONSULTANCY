@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IFH BUSINESS CONSULTANCY - Consultoria em Contabilidade, Finanças e Negócios">
+    <title>IFH BUSINESS CONSULTANCY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        html {scroll-behavior: smooth;}
+        body {font-family:'Poppins', sans-serif; color:#333; line-height:1.6; background:#f0f4f8;}
+        header {background:#0d47a1; color:#fff; text-align:center; padding:20px 0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+        .logo {display:flex; align-items:center; gap:10px; font-size:28px; font-weight:bold;}
+        .logo i {font-size:36px; color:#ffeb3b;}
+        nav {display:flex; justify-content:center; background:#1565c0; position:sticky; top:0; z-index:999;}
+        nav a {color:#fff; text-decoration:none; padding:15px; font-weight:600; transition:background 0.3s;}
+        nav a:hover {background:#0d47a1;}
+        .banner {background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556742049-908e1e04b8ad') no-repeat center center/cover; color:#fff; text-align:center; padding:120px 20px; position:relative; background-attachment:fixed;}
+        .banner h1 {font-size:48px; margin-bottom:10px; position:relative;}
+        .banner p {font-size:20px; margin-bottom:20px; position:relative;}
+        .banner i {font-size:60px; margin-bottom:20px; color:#ffeb3b;}
+        .banner .btn {background:#25D366; color:#fff; padding:14px 28px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:18px; position:relative; transition:background 0.3s;}
+        .banner .btn:hover {background:#1ebe5b;}
+        .container {width:90%; margin:auto; padding:50px 0;}
+        h2 {text-align:center; color:#0d47a1; margin-bottom:20px; font-size:32px;}
+        #servicos {background:linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1581090700227-4c4f50b70d8a') no-repeat center center/cover; padding:50px 20px; border-radius:10px;}
+        .services-list {display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px;}
+        .service {background:#fff; width:30%; text-align:center; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease;}
+        .service i {font-size:50px; color:#0d47a1; margin-bottom:15px;}
+        .service:nth-child(1) i {color:#2196f3;}
+        .service:nth-child(2) i {color:#4caf50;}
+        .service:nth-child(3) i {color:#ff9800;}
+        .about {background:#e3f2fd; padding:50px 20px; border-radius:10px;}
+        .about p {max-width:800px; margin:auto; text-align:center; font-size:18px;}
+        footer {background:#0d47a1; color:#fff; text-align:center; padding:20px;}
+        footer .social a {color:#fff; margin:0 10px; font-size:20px;}
+        .whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; padding:18px; font-size:28px; text-decoration:none;}
+        .service.show {opacity:1; transform:translateY(0);}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-chart-line"></i>
+            IFH BUSINESS CONSULTANCY
+        </div>
+        <p>Excelência em Contabilidade, Finanças e Negócios</p>
+    </header>
+    <section class="banner">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h1>Soluções Inteligentes para Seu Negócio</h1>
+        <p>Consultoria especializada em Contabilidade, Finanças e Gestão Empresarial</p>
+        <a href="#contato" class="btn">Solicitar Orçamento</a>
+    </section>
+    <div class="container">
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="services-list">
+                <div class="service">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Contabilidade</h3>
+                    <p>Gestão contabilística completa para empresas e empreendedores.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Finanças</h3>
+                    <p>Planeamento financeiro e estratégias para crescimento sustentável.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Negócios</h3>
+                    <p>Soluções para expandir e melhorar a performance da sua empresa.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const services = document.querySelectorAll('.service');
+        const showOnScroll = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+            services.forEach(service => {
+                const boxTop = service.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) {
+                    service.classList.add('show');
+                }
+            });
+        };
+        window.addEventListener('scroll', showOnScroll);
+        showOnScroll();
+    </script>
+</body>
+</html>
